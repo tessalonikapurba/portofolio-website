@@ -935,9 +935,9 @@ export default function App() {
               </p>
 
               <div className="flex flex-wrap gap-3 mt-1">
-                <SocialButton href="https://linkedin.com/in/tessalonika" icon={<Linkedin size={16} />} label="LinkedIn" color={t.accent} />
-                <SocialButton href="https://instagram.com/tessalonika" icon={<Instagram size={16} />} label="Instagram" color={t.purple} />
-                <SocialButton href="https://github.com/tessalonika" icon={<Github size={16} />} label="GitHub" color={t.primary} />
+                <SocialButton href="https://www.linkedin.com/in/tessalonika-angeline-purba-21bb29322/" icon={<Linkedin size={16} />} label="LinkedIn" color={t.accent} />
+                <SocialButton href="https://www.instagram.com/angelaaaax__?igsh=Y2xrMjFlZngxYWth" icon={<Instagram size={16} />} label="Instagram" color={t.purple} />
+                <SocialButton href="https://github.com/tessalonikapurba" icon={<Github size={16} />} label="GitHub" color={t.primary} />
               </div>
 
               <div className="flex gap-4 mt-1">
@@ -1123,9 +1123,9 @@ export default function App() {
                 <div className="flex flex-col gap-3 mt-2">
                   <p className="text-xs font-mono uppercase tracking-wider" style={{ color: t.fgMuted, fontFamily: "Space Mono, monospace" }}>Find me on</p>
                   <div className="flex flex-col gap-2">
-                    <SocialButton href="https://linkedin.com/in/tessalonika" icon={<Linkedin size={15} />} label="LinkedIn" color={t.accent} />
-                    <SocialButton href="https://instagram.com/tessalonika" icon={<Instagram size={15} />} label="Instagram" color={t.purple} />
-                    <SocialButton href="https://github.com/tessalonika" icon={<Github size={15} />} label="GitHub" color={t.primary} />
+                    <SocialButton href="https://www.linkedin.com/in/tessalonika-angeline-purba-21bb29322/" icon={<Linkedin size={15} />} label="LinkedIn" color={t.accent} />
+                    <SocialButton href="https://www.instagram.com/angelaaaax__?igsh=Y2xrMjFlZngxYWth" icon={<Instagram size={15} />} label="Instagram" color={t.purple} />
+                    <SocialButton href="https://github.com/tessalonikapurba" icon={<Github size={15} />} label="GitHub" color={t.primary} />
                   </div>
                 </div>
               </div>
