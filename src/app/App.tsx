@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, createContext, useContext } from "react";
 import { Github, Instagram, Linkedin, ExternalLink, Mail, MapPin, Send, Award, Star, Menu, X, Moon, Sun } from "lucide-react";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
-import profilePhoto from "../imports/porto pic profilr.jpeg";
+import profilePhoto from "../imports/portopic.jpeg";
 import certPufa from "@/imports/PRINT__5___5_.png";
 import certPust from "@/imports/24__1_.png";
 import certAngel from "@/imports/angel_page-0001.jpg";
