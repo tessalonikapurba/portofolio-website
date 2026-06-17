@@ -936,7 +936,7 @@ export default function App() {
 
               <div className="flex flex-wrap gap-3 mt-1">
                 <SocialButton href="https://www.linkedin.com/in/tessalonika-angeline-purba-21bb29322/" icon={<Linkedin size={16} />} label="LinkedIn" color={t.accent} />
-                <SocialButton href="https://www.instagram.com/angelaaaax__?igsh=Y2xrMjFlZngxYWth" icon={<Instagram size={16} />} label="Instagram" color={t.purple} />
+                <SocialButton href="https://www.instagram.com/" icon={<Instagram size={16} />} label="Instagram" color={t.purple} />
                 <SocialButton href="https://github.com/tessalonikapurba" icon={<Github size={16} />} label="GitHub" color={t.primary} />
               </div>
 
