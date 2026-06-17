@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, createContext, useContext } from "react";
 import { Github, Instagram, Linkedin, ExternalLink, Mail, MapPin, Send, Award, Star, Menu, X, Moon, Sun } from "lucide-react";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
+import emailjs from "@emailjs/browser";
 import profilePhoto from "../imports/portopic.jpeg";
 import certPufa from "@/imports/PRINT__5___5_.png";
 import certPust from "@/imports/24__1_.png";
@@ -473,7 +474,7 @@ function ExperienceSection() {
               </div>
               
               {/* Photo */}
-              // @ts-ignore
+{/* @ts-ignore */}
 {(org as any).photo && (
                 <div
                   className="rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.01] mt-auto"
@@ -882,18 +883,48 @@ src={org.photo}
 // ─── Main App ────────────────────────────────────────────────────────────────
 export default function App() {
   const [isDark, setIsDark] = useState(true);
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
+ const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  message: "",
+});
+
+const [sent, setSent] = useState(false);
 
   const t = isDark ? dark : light;
   const toggle = () => setIsDark(d => !d);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    await emailjs.send(
+      "service_ree4s6l",
+      "template_9g32deq",
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      },
+      "SmUkyBIsO4vSHyiBI"
+    );
+
     setSent(true);
-    setFormData({ name: "", email: "", message: "" });
-    setTimeout(() => setSent(false), 3000);
-  };
+
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+
+    setTimeout(() => {
+      setSent(false);
+    }, 3000);
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+    alert("Failed to send message");
+  }
+};
 
   const getColor = (key: "primary" | "accent" | "purple" | "blue") => t[key];
 
