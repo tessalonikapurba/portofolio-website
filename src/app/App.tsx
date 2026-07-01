@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, createContext, useContext } from "react";
 import { Github, Instagram, Linkedin, ExternalLink, Mail, MapPin, Send, Award, Star, Menu, X, Moon, Sun } from "lucide-react";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
+import SkillsSection from "./components/SkillsSection";
 import emailjs from "@emailjs/browser";
 import profilePhoto from "../imports/portopic.jpeg";
 import certPufa from "@/imports/PRINT__5___5_.png";
@@ -77,7 +78,7 @@ type Theme = typeof dark;
 const ThemeCtx = createContext<{ t: Theme; isDark: boolean; toggle: () => void }>({
   t: dark, isDark: true, toggle: () => {},
 });
-const useTheme = () => useContext(ThemeCtx);
+export const useTheme = () => useContext(ThemeCtx);
 
 // ─── Stars ────────────────────────────────────────────────────────────────────
 function StarField({ t, isDark }: { t: Theme; isDark: boolean }) {
@@ -164,8 +165,15 @@ function ThemeToggle() {
 function Nav() {
   const { t } = useTheme();
   const [open, setOpen] = useState(false);
-  const links = ["Home", "About", "Experience", "Certificates", "Projects", "Contact"];
-
+  const links = [
+  "Home",
+  "About",
+  "Skills",
+  "Experience",
+  "Certificates",
+  "Projects",
+  "Contact",
+];
   const scroll = (id: string) => {
     document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
     setOpen(false);
@@ -271,6 +279,7 @@ const projects = [
   { title: "MediTrack", desc: "Health record management web app for clinics, featuring appointment scheduling and patient data dashboard.", tags: ["Laravel", "MySQL", "Bootstrap", "Alpine.js"], link: "#", colorKey: "purple" as const },
   { title: "ConstellaChat", desc: "Real-time group chat application with end-to-end encryption, emoji reactions, and dark space-themed UI.", tags: ["Socket.io", "Node.js", "MongoDB", "React"], link: "#", colorKey: "blue" as const },
 ];
+
 
 // ─── Experience Section ───────────────────────────────────────────────────────
 
@@ -1047,6 +1056,8 @@ const [sent, setSent] = useState(false);
             </div>
           </div>
         </section>
+
+        <SkillsSection />
 
         {/* ─── EXPERIENCE ─── */}
         <ExperienceSection />
